@@ -28,6 +28,7 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 96
 
 username=aaaa&password=aaaa&next=%2Fsite%2F&csrfmiddlewaretoken=KWX1b46wfceRa4fJ2MNGpvhXRa935ifm
+
 """
 
 
@@ -97,16 +98,60 @@ class auto():
     Connection: keep-alive
 
     {"created_at":"2016-06-08T05:06:59.912Z","enabled":true,"stat":null,"site_list":["http://www.baidu.com","http://www.cdxy.me"],"temp":false,"name":"cdxy","tags":["cdxy"],"from_time":null,"to_time":null,"run_at":null,"open_modules":["siteinfo","availability","content","weakness"],"siteinfo":true,"availability":{"enabled":true,"cycle":{"value":30,"unit":0},"priority":6,"spider":{"depth":0,"max_page":"10"},"modules":{"availability":["dns","dns_hijack","ping","http_get","http_get_full_time"]}},"content":{"enabled":true,"cycle":{"value":12,"unit":1},"priority":6,"spider":{"depth":3,"max_page":100},"modules":{"content":{"black_links":{"enabled":true},"malscan":{"enabled":true,"mode":"deep","evidence":false},"keyword":{"enabled":true,"level":3,"sys":true,"evidence":false},"deface":{"enabled":false,"level":3,"evidence":false,"text":3,"image":1,"bin":false,"ignore_authcode":false,"exclude_url":[]},"wad":{"enabled":false}}}},"weakness":{"enabled":true,"cycle":{"value":1,"unit":3},"priority":6,"spider":{"depth":10,"max_page":1000},"modules":{"weakness":{"template_id":"56f51bc443b909240a1d8b79"}}},"advanced_spider":{"spider":{"thread_count":20,"timeout":30,"delay":0,"max_url_param":10,"proxy":null,"referer":null,"ua":null,"gather_scope":1,"include_domains":[],"exclude_domains":[],"include_urls":[],"exclude_urls":[],"auth":null,"pre_login":{"url":null,"params":null},"cookie":null,"parse_webkit":0}},"expert_mode":["expert_cloud","expert_dist404","expert_cookie","expert_referer","expert_ua","expert_uri","expert_webvul_verify","expert_waf","expert_sql_verify","expert_sql_deep","expert_allvul","expert_xss_utf7","expert_adv_malscan"]}
-
+{"created_at":"2016-07-02T23:15:35.696Z",
+"enabled":true,"stat":null,"site_list":["http://www.cdxy.me"],
+"temp":false,"name":"cdsx","tags":["cdsa"],
+"from_time":"2016-07-16T23:17:27.000Z","to_time":"2016-07-23T23:17:23.000Z",
+"run_at":null,"open_modules":["siteinfo","availability","content","weakness"],
+"siteinfo":true,"availability":{"enabled":true,"cycle":{"value":30,"unit":0},
+"priority":6,"spider":{"depth":0,"max_page":"10"},"modules":{"availability":
+["dns","dns_hijack","ping","http_get","http_get_full_time"]}},
+"content":{"enabled":true,"cycle":{"value":12,"unit":1},"priority":6,"spider":
+{"depth":3,"max_page":100},
+"modules":{"content":{"black_links":{"enabled":true},
+"malscan":{"enabled":true,"mode":"deep","evidence":false},
+"keyword":{"enabled":true,"level":3,"sys":true,"evidence":true},
+"deface":{"enabled":false,"level":3,"evidence":false,"text":3,"image":1,"bin":false,"ignore_authcode":false,"exclude_url":[]},
+"wad":{"enabled":false}}}},
+"weakness":{"enabled":true,"cycle":{"value":1,"unit":3},
+"priority":3,"spider":{"depth":20,"max_page":5000},
+"modules":{"weakness":{"template_id":"56f51bc443b909240a1d8b94"}}},
+"advanced_spider":{"spider":{"thread_count":30,"timeout":30,"delay":0,
+"max_url_param":10,"proxy":null,"referer":null,"ua":null,"gather_scope":1,
+"include_domains":[],"exclude_domains":[],"include_urls":[],"exclude_urls":[],
+"auth":null,"pre_login":{"url":null,"params":null},"cookie":null,"parse_webkit":2}},
+"expert_mode":["expert_cloud","expert_dist404","expert_cookie","expert_referer","expert_ua","expert_uri","expert_webvul_verify","expert_waf","expert_sql_verify","expert_sql_deep","expert_allvul","expert_xss_utf7","expert_adv_malscan"],"prelogin":true}
     """
 
     def addTargets(self):
         print self.target_list
         # 注意时间设置只能向后
-        data = '{"created_at":"2017-06-08T06:18:40.433Z","enabled":true,"stat":null,"site_list":' + self.target_list
+        data = '{"created_at":"2017-06-08T06:18:40.433Z",' \
+               '"enabled":true,"stat":null,"site_list":' + self.target_list
         data += ',"temp":true,"name":"' + self.name
         data += '","tags":["' + self.tags + '"]'
-        data += ',"from_time":null,"to_time":null,"run_at":null,"open_modules":["siteinfo","availability","content","weakness"],"siteinfo":true,"availability":{"enabled":true,"cycle":{"value":30,"unit":0},"priority":6,"spider":{"depth":0,"max_page":"10"},"modules":{"availability":["dns","dns_hijack","ping","http_get","http_get_full_time"]}},"content":{"enabled":true,"cycle":{"value":12,"unit":1},"priority":6,"spider":{"depth":3,"max_page":100},"modules":{"content":{"black_links":{"enabled":true},"malscan":{"enabled":true,"mode":"fast","evidence":false},"keyword":{"enabled":true,"level":3,"sys":true,"evidence":false},"deface":{"enabled":false,"level":3,"evidence":false,"text":3,"image":1,"bin":false,"ignore_authcode":false,"exclude_url":[]},"wad":{"enabled":false}}}},"weakness":{"enabled":true,"cycle":{"value":1,"unit":3},"priority":6,"spider":{"depth":5,"max_page":1000},"modules":{"weakness":{"template_id":"56f51bc443b909240a1d8b79"}}},"advanced_spider":{"spider":{"thread_count":20,"timeout":30,"delay":0,"max_url_param":10,"proxy":null,"referer":null,"ua":null,"gather_scope":1,"include_domains":[],"exclude_domains":[],"include_urls":[],"exclude_urls":[],"auth":null,"pre_login":{"url":null,"params":null},"cookie":null,"parse_webkit":0}},"expert_mode":["expert_cloud","expert_dist404","expert_webvul_verify","expert_waf","expert_sql_verify"],"prelogin":true}'
+        data += ',"from_time":null,"to_time":null,"run_at":null,"open_modules":' \
+                '["siteinfo","availability","content","weakness"],' \
+                '"siteinfo":true,"availability":{"enabled":true,"cycle":{"value":30,"unit":0},' \
+                '"priority":6,"spider":{"depth":0,"max_page":"10"},' \
+                '"modules":{"availability":' \
+                '["dns","dns_hijack","ping","http_get","http_get_full_time"]}},' \
+                '"content":{"enabled":true,"cycle":{"value":12,"unit":1},' \
+                '"priority":6,"spider":{"depth":3,"max_page":100},' \
+                '"modules":{"content":{"black_links":{"enabled":true},' \
+                '"malscan":{"enabled":true,"mode":"deep","evidence":false},' \
+                '"keyword":{"enabled":true,"level":3,"sys":true,"evidence":true},' \
+                '"deface":{"enabled":false,"level":3,"evidence":false,"text":3,"image":1,"bin":false,"ignore_authcode":false,"exclude_url":[]},' \
+                '"wad":{"enabled":false}}}},' \
+                '"weakness":{"enabled":true,"cycle":{"value":1,"unit":3},' \
+                '"priority":6,"spider":{"depth":20,"max_page":5000},' \
+                '"modules":{"weakness":{"template_id":"56f51bc443b909240a1d8b79"}}},' \
+                '"advanced_spider":{"spider":{"thread_count":30,"timeout":30,"delay":0,' \
+                '"max_url_param":10,"proxy":null,"referer":null,"ua":null,"gather_scope":1,' \
+                '"include_domains":[],"exclude_domains":[],"include_urls":[],' \
+                '"exclude_urls":[],"auth":null,"pre_login":{"url":null,"params":null},' \
+                '"cookie":null,"parse_webkit":0}},' \
+                '"expert_mode":["expert_cloud","expert_dist404","expert_cookie","expert_referer","expert_ua","expert_uri","expert_webvul_verify","expert_waf","expert_sql_verify","expert_sql_deep","expert_allvul","expert_xss_utf7","expert_adv_malscan"],"prelogin":true}'
         # print data
         self.headers['X-CSRFToken'] = self.s.cookies._find('csrftoken')
         self.headers['X-Requested-With'] = 'XMLHttpRequest'
